@@ -20,7 +20,7 @@ jobs:
 
       # step 2: generate build files
       - name: Generate build files
-        uses: thatisuday/go-build-action@v1
+        uses: thatisuday/go-build-action@development
         with:
           platforms: "linux/amd64, darwin/amd64, windows/amd64"
           package: "demo"
