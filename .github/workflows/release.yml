@@ -14,11 +14,11 @@ jobs:
     name: Generate cross-platform builds
     runs-on: ubuntu-latest
     steps:
-      # step 1: checkout repository code
+      # step 1: checkout repository code inside the workspace directory of the runner
       - name: Checkout the repository
         uses: actions/checkout@v2
 
-      # step 2: generate build files
+      # step 2: generate build files and dump inside the workspace directory of the runner
       - name: Generate build files
         uses: thatisuday/go-build-action@v1
         with:
@@ -28,8 +28,8 @@ jobs:
           compress: "true"
           dest: "dist"
 
-      # step 3: upload build-artifacts
-      - name: Upload build-artifacts
+      # step 3: Copy build-artifacts in the GitHub release
+      - name: Copy build-artifacts
         uses: skx/github-action-publish-binaries@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
