@@ -1,9 +1,5 @@
 FROM golang:1.15.3-alpine AS build_base
 
-ENV CGO_ENABLED=1
-ENV GO111MODULE=on
-RUN apk add --no-cache git  git gcc g++
-
 WORKDIR /src
 
 COPY go.mod .
