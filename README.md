@@ -1,7 +1,21 @@
-# GitHub Actions Starter Kit
-Go (Golang) GitHub Actions workflows for CI and CD (GitHub release).
+# Hello world docker action
 
-![CI](https://github.com/thatisuday/github-actions-golang-module/workflows/CI/badge.svg) &nbsp;
-![release](https://github.com/thatisuday/github-actions-golang-module/workflows/release/badge.svg)
+This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
 
-> Lesson: [**https://itnext.io**](https://itnext.io/how-to-set-up-github-workflows-and-create-github-actions-using-docker-3a5ba7ec0988)
+## Inputs
+
+### `who-to-greet`
+
+**Required** The name of the person to greet. Default `"World"`.
+
+## Outputs
+
+### `time`
+
+The time we greeted you.
+
+## Example usage
+
+uses: actions/hello-world-docker-action@v1
+with:
+  who-to-greet: 'Mona the Octocat'
