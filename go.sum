@@ -1,2 +1,4 @@
+github.com/sanzaru/go-giphy v0.0.0-20180211202227-c353d5ec6ee8 h1:i6eP2Hp68IJgrNSiUoExFbIlZ9yt8kFaSsoiYcjPeK8=
+github.com/sanzaru/go-giphy v0.0.0-20180211202227-c353d5ec6ee8/go.mod h1:VblnnSJiiid/UB7WgpUdpzoanVG3HdlEH7/J5Xr+JYQ=
 github.com/t-pwk/go-fibonacci v1.0.0 h1:DkoaBQ+kG4LvT7ujl8/PrnqjD2tF/tqZwOuRw75fb9E=
 github.com/t-pwk/go-fibonacci v1.0.0/go.mod h1:CKc6Kz++tnoyGd5fnNGOGurF5v+K0ztnc/GDBnR6ROA=

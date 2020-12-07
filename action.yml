@@ -1,15 +1,13 @@
 name: "Employer Of The Month"
 description: "Add your employer of the month to you docs"
 inputs:
-  who-to-greet: # id of input
-    description: "Who to greet"
+  tag-to-search:
+    description: "Tag to search for your employee"
     required: true
-    default: "World"
-outputs:
-  time: # id of output
-    description: "The time we greeted you"
+    default: "dog"
 runs:
   using: "docker"
   image: "Dockerfile"
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ secrets.GIPHY_API_KEY }}
+    - ${{ inputs.tag-to-search }}
