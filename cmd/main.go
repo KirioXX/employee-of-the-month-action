@@ -11,6 +11,7 @@ func main() {
 
 	apiKey := argsWithoutProg[0]
 	tag := argsWithoutProg[1]
+	title := argsWithoutProg[2]
 
 	giphy := libgiphy.NewGiphy(apiKey)
 
@@ -19,5 +20,6 @@ func main() {
 		fmt.Println("error:", err)
 	}
 
-	fmt.Printf("Random data: %+v\n", dataRandom)
+	fmt.Printf("Title: %s\n", title)
+	fmt.Printf("Image: %s\n", dataRandom.Data.Image_original_url)
 }

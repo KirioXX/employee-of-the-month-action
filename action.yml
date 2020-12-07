@@ -1,16 +1,21 @@
 name: "Employer Of The Month"
 description: "Add your employer of the month to you docs"
 inputs:
-  giphy-api-key:
+  GIPHY_API_KEY:
     description: "Your giphy api key (keep it secret)"
     required: true
   tag-to-search:
     description: "Tag to search for your employee"
     required: true
     default: "dog"
+  title:
+    description: "Perfect title to price your employee"
+    required: true
+    default: "✨✨ Employee of the month ✨✨"
 runs:
   using: "docker"
   image: "Dockerfile"
   args:
-    - ${{ inputs.giphy-api-key }}
+    - ${{ inputs.GIPHY_API_KEY }}
     - ${{ inputs.tag-to-search }}
+    - ${{ inputs.title }}
