@@ -1,21 +1,35 @@
-# Hello world docker action
+# Employee of the month docker action
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
+Praise your best boy employee in your docs with a love gif every month.
+
+E.G.:
+
+```md
+<!--- employe-of-the-month-action: Start --->
+## ✨✨ Employee of the month ✨✨
+
+![Employee of the month](https://media3.giphy.com/media/fGFL53eiN8OAAPWd2I/giphy.gif)
+<!--- employe-of-the-month-action: End --->
+```
 
 ## Inputs
 
-### `who-to-greet`
+### `GIPHY_API_KEY`
 
-**Required** The name of the person to greet. Default `"World"`.
+**Required** Your giphy api key (keep it secret).
 
-## Outputs
+### `tag-to-search`:
 
-### `time`
+**Required** Tag to search for your employee. Default: `"dog"`
 
-The time we greeted you.
+### `title`:
+
+**Required** Tag to search for your employee. Default: `"✨✨ Employee of the month ✨✨"`
 
 ## Example usage
 
-uses: actions/hello-world-docker-action@v1
+```yml
+uses: actions/employe-of-the-month-action@v1
 with:
-  who-to-greet: 'Mona the Octocat'
+  GIPHY_API_KEY: ${{secrets.GIPHY_API_KEY}}
+```
