@@ -39,13 +39,13 @@ func CloneRepo(dir string, repoURL string, ghUser string, ghToken string) {
 
 func AddFile(path string) {
 	fmt.Println(worktree.Status())
-	worktree.Add("Home.md")
+	worktree.Add(path)
 	fmt.Println(worktree.Status())
 }
 
 func Commit(message string) {
 	worktree.Commit(message, &git.CommitOptions{})
-	fmt.Printf("Committed: %s", message)
+	fmt.Printf("Committed: %s\n", message)
 }
 
 func Push(ghUser string, ghToken string) {

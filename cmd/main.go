@@ -78,7 +78,7 @@ func main() {
 	}
 
 	// Push
-	github.AddFile(file.Dir + "/" + page)
+	github.AddFile(page)
 	github.Commit(wikiCommitMessage)
 	github.Push(ghUser, ghPersonalAccessToken)
 
