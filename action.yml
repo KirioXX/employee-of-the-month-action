@@ -19,3 +19,4 @@ runs:
   args:
     - ${{ inputs.tag-to-search }}
     - ${{ inputs.title }}
+    - ${{ inputs.page }}
