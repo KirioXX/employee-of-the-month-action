@@ -45,6 +45,7 @@ func AddFile(path string) {
 
 func Commit(message string) {
 	worktree.Commit(message, &git.CommitOptions{})
+	fmt.Printf("Committed: %s", message)
 }
 
 func Push(ghUser string, ghToken string) {
@@ -56,7 +57,8 @@ func Push(ghUser string, ghToken string) {
 		},
 	})
 	if err != nil {
-		return
+		fmt.Println(err)
+		os.Exit(1)
 	}
 	fmt.Println("Remote updated.")
 }
