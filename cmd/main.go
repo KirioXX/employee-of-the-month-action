@@ -58,11 +58,11 @@ func main() {
 	}()
 
 	// Github Clone
-	github.CloneRepo(file.Dir, gitRepoURL, ghUser, ghSecret)
+	github.CloneRepo(file.Dir, gitRepoURL, ghUser, ghPersonalAccessToken)
 
 	// File manipulation
 	res := file.ReadFile(page)
-	temp, _ := file.GenTemplate("Hello World", "https://images.app.goo.gl/Hq8GJThHB26Aus927")
+	temp, _ := file.GenTemplate(title, image)
 	if file.HasMarkers(res) {
 		newFileContent := file.ReplaceMarker(string(res), string(temp))
 		file.WriteFile(page, []byte(newFileContent))
@@ -74,7 +74,7 @@ func main() {
 	// Push
 	github.AddFile(file.Dir + "/" + page)
 	github.Commit(wikiCommitMessage)
-	github.Push(ghUser, ghSecret)
+	github.Push(ghUser, ghPersonalAccessToken)
 
 	file.CleanDir()
 }
