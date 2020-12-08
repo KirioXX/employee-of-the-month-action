@@ -9,6 +9,10 @@ inputs:
     description: "Perfect title to price your employee"
     required: true
     default: "✨✨ Employee of the month ✨✨"
+  page:
+    description: "The wiki page you would like to update"
+    required: true
+    default: "Home.md"
 runs:
   using: "docker"
   image: "Dockerfile"

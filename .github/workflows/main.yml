@@ -1,17 +1,17 @@
 on: [push]
 
 jobs:
-  hello_world_job:
+  prise_employee_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: A job to pries the bestest employee
     steps:
       # To use this repository's private action,
       # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Hello world action step
+      - name: Prise the employee of the month
         uses: ./ # Uses an action in the root directory
-        id: hello
+        id: good-boy
         env:
           GIPHY_API_KEY: ${{secrets.GIPHY_API_KEY}}
           GH_PERSONAL_ACCESS_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
