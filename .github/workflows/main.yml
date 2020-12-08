@@ -12,5 +12,6 @@ jobs:
       - name: Hello world action step
         uses: ./ # Uses an action in the root directory
         id: hello
-        with:
+        env:
           GIPHY_API_KEY: ${{secrets.GIPHY_API_KEY}}
+          GH_PERSONAL_ACCESS_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}

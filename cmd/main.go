@@ -26,6 +26,12 @@ func main() {
 		os.Exit(1)
 	}
 
+	giphyApiKey := os.Getenv("GIPHY_API_KEY")
+	if giphyApiKey == "" {
+		fmt.Println("GIPHY_API_KEY environment variable is not set")
+		os.Exit(1)
+	}
+
 	ghPersonalAccessToken := os.Getenv("GH_PERSONAL_ACCESS_TOKEN")
 	if ghPersonalAccessToken == "" {
 		fmt.Println("GH_PERSONAL_ACCESS_TOKEN environment variable is not set")
@@ -33,10 +39,10 @@ func main() {
 	}
 
 	// Get input args
-	apiKey, tag, title, page := os.Args[1], os.Args[2], os.Args[3], os.Args[4]
+	tag, title, page := os.Args[2], os.Args[3], os.Args[4]
 
 	// Get image
-	getRandom := giphy.Init(apiKey)
+	getRandom := giphy.Init(giphyApiKey)
 	image, err := getRandom(tag)
 	if err != nil {
 		fmt.Println(err)

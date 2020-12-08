@@ -1,9 +1,6 @@
 name: "Employer Of The Month"
 description: "Add your employer of the month to you docs"
 inputs:
-  GIPHY_API_KEY:
-    description: "Your giphy api key (keep it secret)"
-    required: true
   tag-to-search:
     description: "Tag to search for your employee"
     required: true
@@ -16,6 +13,5 @@ runs:
   using: "docker"
   image: "Dockerfile"
   args:
-    - ${{ inputs.GIPHY_API_KEY }}
     - ${{ inputs.tag-to-search }}
     - ${{ inputs.title }}
