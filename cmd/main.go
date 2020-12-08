@@ -39,7 +39,7 @@ func main() {
 	}
 
 	// Get input args
-	tag, title, page := os.Args[2], os.Args[3], os.Args[4]
+	tag, title, page := os.Args[1], os.Args[2], os.Args[3]
 
 	// Get image
 	getRandom := giphy.Init(giphyApiKey)
