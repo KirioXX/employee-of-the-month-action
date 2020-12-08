@@ -14,10 +14,6 @@ E.G.:
 
 ## Inputs
 
-### `GIPHY_API_KEY`
-
-**Required** Your giphy api key (keep it secret).
-
 ### `tag-to-search`:
 
 **Required** Tag to search for your employee. Default: `"dog"`
@@ -26,10 +22,18 @@ E.G.:
 
 **Required** Tag to search for your employee. Default: `"✨✨ Employee of the month ✨✨"`
 
+### `page`:
+
+**Required** Page to update. Default: `"Home.md"`
+
 ## Example usage
 
 ```yml
 uses: actions/employe-of-the-month-action@v1
 with:
+  tag-to-search: "cat"
+  title: "Good kitty"
+env:
   GIPHY_API_KEY: ${{secrets.GIPHY_API_KEY}}
+  GH_PERSONAL_ACCESS_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
 ```
