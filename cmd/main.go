@@ -54,7 +54,7 @@ func main() {
 		fmt.Println("WIKI_COMMIT_MESSAGE not set, using default")
 		wikiCommitMessage = "Automatically publish wiki"
 	}
-	gitRepoURL := "https://@github.com/" + ghRepo + ".wiki.git"
+	gitRepoURL := "https://github.com/" + ghRepo + ".wiki.git"
 	sigs := make(chan os.Signal, 1)
 	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
 	go func() {

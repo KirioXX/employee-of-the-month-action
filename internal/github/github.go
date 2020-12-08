@@ -39,12 +39,18 @@ func CloneRepo(dir string, repoURL string, ghUser string, ghToken string) {
 
 func AddFile(path string) {
 	fmt.Println(worktree.Status())
-	worktree.Add(path)
+	if _, err := worktree.Add(path); err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
 	fmt.Println(worktree.Status())
 }
 
 func Commit(message string) {
-	worktree.Commit(message, &git.CommitOptions{})
+	if _, err := worktree.Commit(message, &git.CommitOptions{}); err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
 	fmt.Printf("Committed: %s\n", message)
 }
 
