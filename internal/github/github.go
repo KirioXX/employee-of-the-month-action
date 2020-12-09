@@ -3,8 +3,10 @@ package github
 import (
 	"fmt"
 	git "github.com/go-git/go-git/v5"
+	"github.com/go-git/go-git/v5/plumbing/object"
 	http "github.com/go-git/go-git/v5/plumbing/transport/http"
 	"os"
+	"time"
 )
 
 var repo *git.Repository
@@ -46,8 +48,13 @@ func AddFile(path string) {
 	fmt.Println(worktree.Status())
 }
 
-func Commit(message string) {
-	if _, err := worktree.Commit(message, &git.CommitOptions{}); err != nil {
+func Commit(message string, ghUser string) {
+	if _, err := worktree.Commit(message, &git.CommitOptions{
+		Author: &object.Signature{
+			Name: ghUser,
+			When: time.Now(),
+		},
+	}); err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
