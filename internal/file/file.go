@@ -9,6 +9,7 @@ import (
 	"regexp"
 	"strings"
 	"text/template"
+	"time"
 )
 
 const (
@@ -24,6 +25,9 @@ type content struct {
 	ImageURL     string
 	EndComment   string
 }
+type titleContent struct {
+	Month string
+}
 
 func GenTemplate(title string, imageURL string) ([]byte, error) {
 	b, err := template.New("block").Parse(`
@@ -37,9 +41,19 @@ func GenTemplate(title string, imageURL string) ([]byte, error) {
 		fmt.Println(err)
 		return nil, err
 	}
+	t, err := template.New("title").Parse(title)
+	if err != nil {
+		fmt.Println(err)
+		return nil, err
+	}
 
+	var tplTitle bytes.Buffer
+	if err := t.Execute(&tplTitle, titleContent{time.Now().Month().String()}); err != nil {
+		fmt.Println(err)
+		return nil, err
+	}
 	var tpl bytes.Buffer
-	if err := b.Execute(&tpl, content{startComment, title, imageURL, endComment}); err != nil {
+	if err := b.Execute(&tpl, content{startComment, tplTitle.String(), imageURL, endComment}); err != nil {
 		fmt.Println(err)
 		return nil, err
 	}
