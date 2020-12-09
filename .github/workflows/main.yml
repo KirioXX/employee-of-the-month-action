@@ -12,8 +12,6 @@ jobs:
       - name: Prise the employee of the month
         uses: ./ # Uses an action in the root directory
         id: good-boy
-        with:
-          page: "Test-1.md"
         env:
           GIPHY_API_KEY: ${{secrets.GIPHY_API_KEY}}
           GH_PERSONAL_ACCESS_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
