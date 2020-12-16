@@ -34,13 +34,14 @@ on:
     # * is a special character in YAML so you have to quote this string
     - cron: "* 0 1 * *"
 ...
-uses: actions/employe-of-the-month-action@v1
-with:
-  tag-to-search: "cat"
-  title: "{{.Month}} good kitty of the month"
-  page: "Home.md"
-env:
-  GIPHY_API_KEY: ${{secrets.GIPHY_API_KEY}}
-  GH_PERSONAL_ACCESS_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+- name: Employer Of The Month
+  uses: KirioXX/employee-of-the-month-action@v1.0.0
+  with:
+    tag-to-search: "cat"
+    title: "{{.Month}} good kitty of the month"
+    page: "Home.md"
+  env:
+    GIPHY_API_KEY: ${{secrets.GIPHY_API_KEY}}
+    GH_PERSONAL_ACCESS_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
 ...
 ```
