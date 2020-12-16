@@ -1,5 +1,8 @@
 name: "Employer Of The Month"
-description: "Add your employer of the month to you docs"
+description: "Add the 🐶 of the month to your wiki"
+branding:
+  icon: 'award'
+  color: 'green'
 inputs:
   tag-to-search:
     description: "Tag to search for your employee"
