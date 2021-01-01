@@ -30,13 +30,11 @@ type titleContent struct {
 }
 
 func GenTemplate(title string, imageURL string) ([]byte, error) {
-	b, err := template.New("block").Parse(`
-{{.StartComment}}
+	b, err := template.New("block").Parse(`{{.StartComment}}
 ## {{.Title}}
 
 ![Employee of the month]({{.ImageURL}})
-{{.EndComment}}
-`)
+{{.EndComment}}`)
 	if err != nil {
 		fmt.Println(err)
 		return nil, err
