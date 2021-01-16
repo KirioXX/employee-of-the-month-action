@@ -19,4 +19,4 @@ jobs:
           title: "✨✨ Employee of the month {{.Month}} ✨✨"
         env:
           GIPHY_API_KEY: ${{secrets.GIPHY_API_KEY}}
-          GH_PERSONAL_ACCESS_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+          GH_PERSONAL_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
