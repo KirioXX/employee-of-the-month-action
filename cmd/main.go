@@ -32,9 +32,9 @@ func main() {
 		os.Exit(1)
 	}
 
-	ghPersonalAccessToken := os.Getenv("GH_PERSONAL_ACCESS_TOKEN")
-	if ghPersonalAccessToken == "" {
-		fmt.Println("GH_PERSONAL_ACCESS_TOKEN environment variable is not set")
+	ghToken := os.Getenv("GITHUB_TOKEN")
+	if ghToken == "" {
+		fmt.Println("GITHUB_TOKEN environment variable is not set")
 		os.Exit(1)
 	}
 
@@ -64,7 +64,7 @@ func main() {
 	}()
 
 	// Github Clone
-	github.CloneRepo(file.Dir, gitRepoURL, ghUser, ghPersonalAccessToken)
+	github.CloneRepo(file.Dir, gitRepoURL, ghUser, ghToken)
 
 	// File manipulation
 	res := file.ReadFile(page)
@@ -80,7 +80,7 @@ func main() {
 	// Push
 	github.AddFile(page)
 	github.Commit(wikiCommitMessage, ghUser)
-	github.Push(ghUser, ghPersonalAccessToken)
+	github.Push(ghUser, ghToken)
 
 	file.CleanDir()
 }

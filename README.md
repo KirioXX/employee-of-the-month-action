@@ -1,6 +1,6 @@
 # Employee of the month docker action
 
-Praise your best boy employee in your docs with a lovely gif every month.
+Praise your best boy or girl employee in your docs with a lovely gif every month.
 
 E.G.:
 
@@ -42,6 +42,6 @@ on:
     page: "Home.md"
   env:
     GIPHY_API_KEY: ${{secrets.GIPHY_API_KEY}}
-    GH_PERSONAL_ACCESS_TOKEN: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ...
 ```
