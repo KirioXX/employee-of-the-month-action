@@ -1,3 +1,4 @@
+name: Praise the best employee
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
@@ -6,14 +7,12 @@ on:
 jobs:
   prise_employee_job:
     runs-on: ubuntu-latest
-    name: A job to pries the bestest employee
     steps:
       # To use this repository's private action,
       # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Prise the employee of the month
-        uses: ./ # Uses an action in the root directory
+      - uses: ./ # Uses an action in the root directory
         id: good-boy
         with:
           title: "✨✨ Employee of the month {{.Month}} ✨✨"
