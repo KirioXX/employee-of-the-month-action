@@ -16,15 +16,29 @@ E.G.:
 
 ### `tag-to-search`:
 
-**Required** Tag to search for your employee. Default: `"dog"`
+**Required** Tag to search for your employee.
+Default: `"dog"`
 
 ### `title`:
 
-**Required** Tag to search for your employee. Default: `"✨✨ Employee of the month {{.Month}}✨✨"`
+**Required** Tag to search for your employee.
+Default: `"✨✨ Employee of the month {{.Month}}✨✨"`
 
 ### `page`:
 
-**Required** Page to update. Default: `"Home.md"`
+**Required** Page to update.
+Default: `"Home.md"`
+## Environment Variables
+
+### `GIPHY_API_KEY`:
+
+**Required** Your personal [giphy API token](https://support.giphy.com/hc/en-us/articles/360020283431-Request-A-GIPHY-API-Key). Best to store in your project secrets.
+Default: `""`
+
+### `GITHUB_TOKEN`:
+
+**Required** Your projects github token. You can use the one that comes from the runner or generate one with limited access.
+Default: `""`
 
 ## Example usage
 
